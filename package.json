@@ -1,0 +1,23 @@
+{
+  "name": "vi3w3r",
+  "version": "1.0.0",
+  "description": "text file viewer",
+  "homepage": "https://github.com/leolmi/vi3w3r",
+  "license": "MIT",
+  "keywords": [
+    "text",
+    "markdown",
+    "json",
+    "viewer",
+    "reader"
+  ],
+  "author": {
+    "name": "Leo",
+    "email": "leo.olmi@gmail.com",
+    "url": "https://github.com/leolmi/vi3w3r"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leolmi/vi3w3r"
+  }
+}
