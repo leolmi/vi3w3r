@@ -137,6 +137,7 @@ pre {
     background-color: #333;
     padding: 10px;
     border-radius: 10px;
+    white-space: pre-wrap;
 }
 
 em {
