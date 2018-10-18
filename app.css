@@ -130,11 +130,11 @@ body.md-text-opened .md-dropper {
 }
 
 code {
-    color: mediumpurple;
+    color: orchid;
 }
 
 pre {
-    background-color: ghostwhite;
+    background-color: #333;
     padding: 10px;
     border-radius: 10px;
 }
