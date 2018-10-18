@@ -18,6 +18,7 @@ body, html {
 }
 
 .md-toolbar {
+    z-index: 1000000;
     position: fixed;
     top: 0;
     left: 0;
@@ -53,6 +54,71 @@ body, html {
 .md-hidden {
     visibility: hidden;
     position: absolute;
+}
+.no-events {
+    pointer-events: none;
+}
+
+.md-dropper {
+    position: absolute;
+    display: table;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+.md-dropper .md-dropper-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+.md-dropper .md-dropper-container .md-dropper-label {
+    margin: auto;
+    width: 300px;
+    font-size: 3em;
+    opacity: .2;
+    border: transparent 4px dotted;
+    padding: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    outline: none;
+}
+.md-dropper .md-dropper-container .md-dropper-label:hover {
+    opacity: .6;
+    border-color: #222;
+}
+.md-dropper .md-dropper-container .md-dropper-label .sub-label {
+    position: absolute;
+    font-size: initial;
+    display: -webkit-box;
+    text-align: center;
+    left: 50%;
+    margin-left: -25px;
+}
+
+.md-icon {
+    display: block;
+    text-indent: -9999px;
+    width: 26px;
+    height: 26px;
+    opacity: .4;
+}
+.md-icon:hover {
+    opacity: .6;
+}
+.md-icon-insert {
+    background: url(assets/insert.svg);
+}
+.md-icon-print {
+    background: url(assets/print.svg);
+}
+
+
+
+
+body.md-text-opened .md-dropper {
+    display: none;
 }
 
 @media print

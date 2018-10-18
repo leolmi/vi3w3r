@@ -5,6 +5,7 @@
   const container = document.getElementById('bookmark');
   const error = document.getElementById('error');
   const loader = document.getElementById('loader');
+  const body = document.getElementsByTagName("BODY")[0];
 
   function _manageErr(err) {
     container.innerHTML = '';
@@ -55,6 +56,7 @@
           if (err) return _manageErr(err);
           container.innerHTML = res;
           _class(container, 'md-mono', !lockstyle);
+          _class(body, 'md-text-opened', true);
         });
       } catch(err) {
         _manageErr(err);

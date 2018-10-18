@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <title>vi3w3r</title>
     <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
     <div class="md-toolbar md-no-print">
         <input id="loader" class="md-hidden" type="file" onchange="loadFileMD(event)">
-        <button class="md-button" onclick="chooseMD(event)"><i class="fa fa-file-import fa-2x"></i></button>
-        <button class="md-button md-mr20" onclick="printMD(event)"><i class="fa fa-print fa-2x"></i></button>
+        <button class="md-button" onclick="chooseMD(event)" title="open file"><i class="md-icon md-icon-insert"></i></button>
+        <button class="md-button md-mr20" onclick="printMD(event)" title="print content"><i class="md-icon md-icon-print"></i></button>
     </div>
     <div id="bookmark"></div>
     <div id="error"></div>
+    <div id="dropper" class="md-dropper md-no-print">
+        <div class="md-dropper-container">
+            <div class="md-dropper-label" onclick="chooseMD(event)">
+                <span class="no-events">drag file here</span>
+                <span class="no-events sub-label">or click</span>
+            </div>
+        </div>
+    </div>
     <script src="lib/showdown.js"></script>
     <script src="app.js"></script>
 </body>
