@@ -82,9 +82,9 @@
     w.print();
   };
 
-  // w.closeTools = function() {
+  w.closeTools = function() {
   //   if (tools) w.toggleMD();
-  // };
+  };
 
   w.toggleMD = function() {
     tools = !tools;
