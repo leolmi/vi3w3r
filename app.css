@@ -4,6 +4,12 @@ body, html {
     margin: 0;
 }
 
+.no-events {
+    pointer-events: none;
+}
+
+
+
 #bookmark {
     white-space: pre-wrap;
 }
@@ -17,14 +23,16 @@ body, html {
     white-space: pre-wrap;
 }
 
+#file-info {
+    font-family: monospace;
+    margin-right: 20px;
+    opacity: .6;
+    line-height: 46px;
+}
+
 .md-toolbar {
-    z-index: 1000000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    text-align: right;
-    padding: 10px 30px;
+    margin-top: 100px;
+    padding: 0 20px;
 }
 .md-toolbar > * {
     display: inline-flex;
@@ -32,7 +40,7 @@ body, html {
 
 .md-button {
     border: none;
-    background-color: transparent;
+    /*background-color: transparent;*/
     padding: 10px;
     border-radius: 50%;
     /* border: #2222223d 1px solid; */
@@ -40,24 +48,61 @@ body, html {
     cursor: pointer;
     outline: none;
     /* color: #333; */
-    /* opacity: .7; */
+    opacity: .7;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    background-color: white;
 }
 .md-button:hover {
-    background-color: rgba(175, 189, 195, 0.16);
+    background-color: lightskyblue;
 }
 
-.md-mr20 {
-    margin-right: 60px;
+.md-vertical-menu {
+    position: fixed;
+    right: 0;
+    z-index: 10000;
 }
+.md-vertical-menu #file-info {
+    position: absolute;
+    right: 60px;
+    top: 10px;
+}
+.md-vertical-menu > .md-button {
+    display: block;
+    margin: 10px 20px;
+}
+
+/*.md-group-button {*/
+    /*display: flex;*/
+/*}*/
+/*.md-group-button > * {*/
+    /*display: inline-flex;*/
+/*}*/
+
+/*.md-toolbar .md-button {*/
+    /*background-color: transparent !Important;*/
+/*}*/
+
+
+/*.md-mr20 {*/
+    /*margin-right: 60px;*/
+/*}*/
 
 .md-hidden {
     visibility: hidden;
     position: absolute;
 }
-.no-events {
-    pointer-events: none;
-}
+
+/*.md-main-box {*/
+    /*z-index: 1000000;*/
+    /*position: fixed;*/
+    /*top: 20px;*/
+    /*right: 20px;*/
+    /*line-height: 46px;*/
+    /*display: flex;*/
+/*}*/
+/*.md-main-box > * {*/
+    /*display: inline-flex;*/
+/*}*/
 
 .md-dropper {
     position: absolute;
@@ -104,18 +149,78 @@ body, html {
     height: 26px;
     opacity: .4;
 }
+a > .md-icon {
+    display: inline-flex;
+}
 .md-icon:hover {
     opacity: .6;
 }
-.md-icon-insert {
-    background: url(assets/insert.svg);
+.md-icon-insert {background: url(assets/insert.svg);}
+.md-icon-print {background: url(assets/print.svg);}
+.md-icon-menu {background: url(assets/menu.svg);}
+.md-icon-appearance {background: url(assets/color_lens.svg);}
+.md-icon-close {background: url(assets/close.svg);}
+.md-icon-arrow-up {background: url(assets/arrow_up.svg);}
+.md-icon-github {
+    width: 14px;
+    height: 14px;
+    background: url(assets/github.svg);
 }
-.md-icon-print {
-    background: url(assets/print.svg);
+
+.md-back-to-top {
+    pointer-events: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+body.md-scroll-on .md-back-to-top {
+    pointer-events: auto;
+    opacity: 1;
 }
 
+/*.md-tools {*/
+    /*width: 300px;*/
+    /*position: fixed;*/
+    /*right: -300px;*/
+    /*top: 0;*/
+    /*height: 100vh;*/
+    /*transition: right .5s ease-out;*/
+    /*-moz-transition: right .5s ease-out;*/
+    /*-webkit-transition: right .5s ease-out;*/
+    /*-o-transition: right .5s ease-out;*/
+    /*background-color: lightskyblue;*/
+    /*z-index: 1000;*/
+    /*-moz-box-shadow:    inset 5px 4px 4px -6px;*/
+    /*-webkit-box-shadow: inset 5px 4px 4px -6px;*/
+    /*box-shadow: inset 5px 4px 4px -6px;*/
+/*}*/
 
+/*.md-vi3w3r-info {*/
+    /*position: fixed;*/
+    /*bottom: 2px;*/
+    /*width: 300px;*/
+    /*text-align: center;*/
+    /*font-family: monospace;*/
+/*}*/
+.md-bottom-info {
+    position: fixed;
+    bottom: 4px;
+    width: 100vw;
+    text-align: center;
+    font-family: monospace;
+    left: 0;
+    opacity: .7;
+    z-index: 10000;
+}
 
+body.md-tools-active .md-tools {
+    right: 0;
+}
 
 body.md-text-opened .md-dropper {
     display: none;
@@ -134,7 +239,7 @@ code {
 }
 
 pre {
-    background-color: ghostwhite;
+    background-color: #ddd;
     padding: 10px;
     border-radius: 10px;
 }

@@ -6,21 +6,39 @@
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
-    <div class="md-toolbar md-no-print">
+    <!--<div class="md-main-box md-no-print">-->
+        <!--<div id="file-info"></div>-->
+        <!--<button class="md-button" onclick="toggleMD(event)" title="toggle tools"><i class="md-icon md-icon-menu"></i></button>-->
+    <!--</div>-->
+    <!--<div class="md-tools md-no-print">-->
+        <!--<input id="loader" class="md-hidden" type="file" onchange="loadFileMD(event)">-->
+        <!--<div class="md-toolbar">-->
+            <!--<button class="md-button" onclick="chooseMD(event)" title="open file"><i class="md-icon md-icon-insert"></i></button>-->
+            <!--<button class="md-button" onclick="printMD(event)" title="print content"><i class="md-icon md-icon-print"></i></button>-->
+            <!--<button class="md-button" onclick="clearMD(event)" title="clear all"><i class="md-icon md-icon-close"></i></button>-->
+        <!--</div>-->
+        <!--<divider></divider>-->
+        <!--<div class="md-vi3w3r-info">leo <a href="https://github.com/leolmi/vi3w3r" target="_blank"><i class="md-icon md-icon-github"></i></a> 2018</div>-->
+    <!--</div>-->
+    <div class="md-vertical-menu">
         <input id="loader" class="md-hidden" type="file" onchange="loadFileMD(event)">
+        <div id="file-info"></div>
         <button class="md-button" onclick="chooseMD(event)" title="open file"><i class="md-icon md-icon-insert"></i></button>
-        <button class="md-button md-mr20" onclick="printMD(event)" title="print content"><i class="md-icon md-icon-print"></i></button>
+        <button class="md-button" onclick="printMD(event)" title="print content"><i class="md-icon md-icon-print"></i></button>
+        <button class="md-button" onclick="clearMD(event)" title="clear all"><i class="md-icon md-icon-close"></i></button>
     </div>
-    <div id="bookmark"></div>
+    <div class="md-bottom-info">leo <a href="https://github.com/leolmi/vi3w3r" target="_blank"><i class="md-icon md-icon-github"></i></a> 2018</div>
+    <div id="bookmark" onclick="closeTools(event)"></div>
     <div id="error"></div>
     <div id="dropper" class="md-dropper md-no-print">
-        <div class="md-dropper-container">
+        <div class="md-dropper-container" onclick="closeTools(event)">
             <div class="md-dropper-label" onclick="chooseMD(event)">
                 <span class="no-events">drag file here</span>
                 <span class="no-events sub-label">or click</span>
             </div>
         </div>
     </div>
+    <button class="md-button md-back-to-top" onclick="topMD(event)" title="back to top"><i class="md-icon md-icon-arrow-up"></i></button>
     <script src="lib/showdown.js"></script>
     <script src="app.js"></script>
 </body>
