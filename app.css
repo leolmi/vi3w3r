@@ -28,6 +28,7 @@ body, html {
     margin-right: 20px;
     opacity: .6;
     line-height: 46px;
+    white-space: nowrap;
 }
 
 .md-toolbar {
